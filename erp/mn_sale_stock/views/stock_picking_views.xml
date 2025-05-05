@@ -12,6 +12,12 @@
             <xpath expr="//field[@name='location_dest_id'][2]" position="attributes">
                 <attribute name="domain">domain_location_id</attribute>
             </xpath>
+            <xpath expr="//button[@name='button_validate']" position="attributes">
+                <attribute name="groups">mn_sale_stock.group_view_stock_admin</attribute>
+            </xpath>
+            <xpath expr="//button[@name='button_validate'][2]" position="attributes">
+                <attribute name="groups">mn_sale_stock.group_view_stock_admin</attribute>
+            </xpath>
         </field>
     </record>
 
