@@ -9,8 +9,12 @@
     'company': 'Z',
     'maintainer': 'Z',
     'website': '',
-    'depends': ['sale_stock'],
+    'depends': ['sale_stock', 'stock'],
     "data": [
+        'security/security.xml',
+        'views/stock_menus.xml',
+        'views/stock_picking_views.xml',
+        'views/stock_warehouse_orderpoint_views.xml'
     ],
     'license': 'GPL-3',
     'installable': True,

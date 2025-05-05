@@ -2,19 +2,16 @@
 from odoo import models, fields, api
 
 
-class StockPicking(models.Model):
-    _inherit = 'stock.picking'
+class StockWarehouseOrderPoint(models.Model):
+    _inherit = 'stock.warehouse.orderpoint'
 
     @api.depends('location_id')
     def _compute_domain_location_id(self):
         warehouses = self.env['stock.warehouse'].sudo().search([])
-        picking_type_code = self.env.context.get('restricted_picking_type_code')
         for obj in self:
-            ids = [x.id for x in warehouses.mapped('lot_stock_id')]
             obj.domain_location_id = []
+            ids = [x.id for x in warehouses.mapped('lot_stock_id')]
             print("IDS", ids)
-            if picking_type_code == 'internal':
-                obj.domain_location_id = [('id', 'in', ids), ('id', '!=', obj.location_id.id)]
-                
+            obj.domain_location_id = [('id', 'in', ids)]
 
     domain_location_id = fields.Binary('Location Domain', compute=_compute_domain_location_id)

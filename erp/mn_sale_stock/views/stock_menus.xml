@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> <!-- Important: set noupdate to 0 -->
+
+        <record id="stock.menu_stock_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_accountant')])]" />
+        </record>
+
+        <record id="stock.stock_picking_type_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+        <record id="stock.menu_stock_adjustments" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+        <record id="stock.menu_stock_config_settings" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_admin')])]" />
+        </record>
+
+        <record id="stock.menu_procurement_compute" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+        <record id="stock.stock_move_line_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+        <record id="stock.stock_move_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+        <record id="stock_account.menu_valuation" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+        <record id="stock_account.menu_inventory_aging" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('mn_sale_stock.group_view_stock_no_see')])]" />
+        </record>
+
+    </data>
+
+</odoo>

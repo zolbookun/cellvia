@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_view_stock_accountant" model="res.groups">
+        <field name="name">Агуулахын нягтлан</field>
+        <field name="implied_ids" eval="[(4, ref('stock.group_stock_manager'))]"/>
+    </record>
+
+    <record id="group_view_stock_admin" model="res.groups">
+        <field name="name">Админ батлагч</field>
+        <field name="implied_ids" eval="[(4, ref('mn_sale_stock.group_view_stock_accountant'))]"/>
+    </record>
+
+    <record id="group_view_stock_no_see" model="res.groups">
+        <field name="name">Харуулахгүй</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+</odoo>
