@@ -7,7 +7,7 @@
             <xpath expr="//table[@name='stock_move_line_table']//thead/tr/th[@name='lot_serial']" position="after">
                 <th name="th_sm_amount_total"><strong>Нийт үнэ</strong></th>
             </xpath>
-            <xpath expr="//table[@name='stock_move_line_table']//thead/tr/th[@name='th_sml_qty_ordered']" position="before">
+            <xpath expr="//table[@name='stock_move_line_table']//thead/tr" position="inside">
                 <th name="th_sm_price_unit"><strong>Нэгж үнэ</strong></th>
             </xpath>
         </template>
