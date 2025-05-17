@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        
+        <template id="report_delivery_document_mn" inherit_id="stock.report_delivery_document">
+            <xpath expr="//table[@name='stock_move_line_table']//thead/tr/th[@name='lot_serial']" position="after">
+                <th name="th_sm_amount_total"><strong>Нийт үнэ</strong></th>
+            </xpath>
+            <xpath expr="//table[@name='stock_move_line_table']//thead/tr/th[@name='th_sml_qty_ordered']" position="before">
+                <th name="th_sm_price_unit"><strong>Нэгж үнэ</strong></th>
+            </xpath>
+        </template>
+
+
+        <template id="stock_report_delivery_aggregated_move_lines_mn" name="template_name" inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+            <xpath expr="//td[1]" position="after">
+                <td class="text-center">
+                    <t t-if="aggregated_lines[line]['price_unit']">
+                        <span t-esc="aggregated_lines[line]['price_unit']"
+                            t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                        <span t-esc="' ₮'"/>
+                    </t>
+                </td>
+            </xpath>
+            <xpath expr="//td[4]" position="after">
+                <td class="text-center">
+                    <t t-if="aggregated_lines[line]['amount_total']">
+                        <span t-esc="aggregated_lines[line]['amount_total']"
+                            t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                        <span t-esc="' ₮'"/>
+                    </t>
+                </td>
+            </xpath>
+        </template>
+        
+    
+    </data>
+    
+
+</odoo>

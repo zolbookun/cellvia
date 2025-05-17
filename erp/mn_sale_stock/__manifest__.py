@@ -17,6 +17,7 @@
         'views/stock_warehouse_orderpoint_views.xml',
         'views/sale_menus.xml',
         'views/sale_order_view.xml',
+        'views/report_picking_view.xml',
     ],
     'license': 'GPL-3',
     'installable': True,

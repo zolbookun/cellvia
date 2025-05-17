@@ -18,6 +18,12 @@
             <xpath expr="//button[@name='button_validate'][2]" position="attributes">
                 <attribute name="groups">mn_sale_stock.group_view_stock_admin</attribute>
             </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='product_id']" position="after">
+                <field name="price_unit" />
+            </xpath>
+            <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='quantity']" position="after">
+                <field name="amount_total" total="Нийт үнэ" />
+            </xpath>
         </field>
     </record>
 
