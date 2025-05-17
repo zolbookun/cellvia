@@ -23,7 +23,7 @@
                     </t>
                 </td>
             </xpath>
-            <xpath expr="//td[4]" position="after">
+            <xpath expr="//tr" position="inside">
                 <td class="text-center">
                     <t t-if="aggregated_lines[line]['amount_total']">
                         <span t-esc="aggregated_lines[line]['amount_total']"
