@@ -25,6 +25,7 @@ class StockMove(models.Model):
     _inherit = 'stock.move.line'
 
     price_unit = fields.Float('Нэгж үнэ', related='move_id.price_unit')
+    
 
     def _get_aggregated_product_quantities(self, **kwargs):
         """ Returns a dictionary of products (key = id+name+description+uom+packaging) and corresponding values of interest.
@@ -74,6 +75,7 @@ class StockMove(models.Model):
                     'product': move_line.product_id,
                     'amount_total': move_line.quantity * move_line.price_unit,
                     'price_unit': move_line.price_unit,
+                    'description_picking': move_line.description_picking
                 }
             else:
                 aggregated_move_lines[line_key]['qty_ordered'] += quantity

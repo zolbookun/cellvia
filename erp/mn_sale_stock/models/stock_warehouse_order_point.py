@@ -11,7 +11,6 @@ class StockWarehouseOrderPoint(models.Model):
         for obj in self:
             obj.domain_location_id = []
             ids = [x.id for x in warehouses.mapped('lot_stock_id')]
-            print("IDS", ids)
             obj.domain_location_id = [('id', 'in', ids)]
 
     domain_location_id = fields.Binary('Location Domain', compute=_compute_domain_location_id)

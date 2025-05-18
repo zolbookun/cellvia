@@ -8,13 +8,47 @@
                 <th name="th_sm_amount_total"><strong>Нийт үнэ</strong></th>
             </xpath>
             <xpath expr="//table[@name='stock_move_line_table']//thead/tr/th[@name='th_sml_qty_ordered']" position="before">
+                <th name="th_sm_price_unit"><strong>Тайлбар</strong></th>
                 <th name="th_sm_price_unit"><strong>Нэгж үнэ</strong></th>
             </xpath>
+
+            <xpath expr="//div[@class='page']" position="inside">
+                <div class="mt32 mr4" name="signature">
+                    <div class="mt32 d-flex flex-row-reverse">
+                        <div class="mr4">
+                            <p><b>Нийт тоо хэмжээ:</b> <span class="ml2" t-esc="o.total_qty"/></p>
+                            <p><b>Нийт дүн:</b><span class="ml2" t-esc="o.total_price" /><span t-esc="' ₮'"/></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt32 mr4" name="signature">
+                    <div class="mt64 d-flex justify-content-between align-items-center">
+                        <div>
+                            <p><b>Хүлээлгэж өгсөн:</b></p>
+                            <p>Гарын үсэг: _______________________________________</p>
+                        </div>
+                        <div>
+                            <p><b>Хүлээж авсан:</b></p>
+                            <p>Гарын үсэг: _______________________________________</p>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+
         </template>
 
 
         <template id="stock_report_delivery_aggregated_move_lines_mn" inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+            <xpath expr="//td[1]/p" position="replace">
+                
+            </xpath>
             <xpath expr="//td[1]" position="after">
+                <td class="text-center">
+                    <t t-if="aggregated_lines[line]['description']">
+                        <span class="text-center" t-esc="aggregated_lines[line]['description']" t-options="{'widget': 'string'}"/>
+                    </t>
+                </td>
                 <td class="text-center">
                     <t t-if="aggregated_lines[line]['price_unit']">
                         <span t-esc="aggregated_lines[line]['price_unit']"

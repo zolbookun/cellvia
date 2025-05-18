@@ -8,6 +8,8 @@
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
                 <field name="domain_location_id" invisible="1"/>
+                <field name="total_qty" invisible="1" />
+                <field name="total_price" invisible="1" />
             </xpath>
             <xpath expr="//field[@name='location_dest_id'][2]" position="attributes">
                 <attribute name="domain">domain_location_id</attribute>
